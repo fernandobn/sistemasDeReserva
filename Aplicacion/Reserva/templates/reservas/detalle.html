@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Detalles de la Reserva</h2>
+<ul>
+    <li><strong>Campista:</strong> {{ reserva.campista.nombre_completo }}</li>
+    <li><strong>Fecha de Inicio:</strong> {{ reserva.fecha_inicio }}</li>
+    <li><strong>Fecha de Fin:</strong> {{ reserva.fecha_fin }}</li>
+    <li><strong>Tipo de Alojamiento:</strong> {{ reserva.tipo_alojamiento }}</li>
+    <li><strong>Estado:</strong> {{ reserva.estado }}</li>
+    <li><strong>Observaciones:</strong> {{ reserva.observaciones }}</li>
+</ul>
+
+<a href="{% url 'editar_reserva' reserva.pk %}" class="btn btn-warning">Editar</a>
+<a href="{% url 'eliminar_reserva' reserva.pk %}" class="btn btn-danger">Eliminar</a>
+<a href="{% url 'lista_reservas' %}" class="btn btn-secondary">Volver a la lista</a>
+{% endblock %}
